@@ -1,6 +1,3 @@
 #!/bin/bash
-while true
-do
-     java -version	
-     echo "...... de novo! ...."
-done
+
+/opt/jmeter/latest/bin/jmeter -n -t /opt/jmeter/test-plan/simple.jmx
