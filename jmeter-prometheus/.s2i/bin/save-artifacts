@@ -1,0 +1,4 @@
+#!/bin/bash
+mkdir -p /opt/app-root/cache
+echo "Incremental Build" > /opt/app-root/cache/README.txt
+tar -C /opt/app-root -cf - cache
