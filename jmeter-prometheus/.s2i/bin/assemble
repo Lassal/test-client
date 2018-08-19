@@ -12,11 +12,12 @@ mkdir /deployments/jmeter
 tar -xvzf /tmp/src/target/jmeter.tgz -C /deployments/jmeter
 ls -l /deployments/jmeter
 echo "Last JMeter: "$(ls -dr /deployments/jmeter/apache-jmeter-* | head -n 1)
-ln -sf /deployments/jmeter/$(ls -dr /deployments/jmeter/apache-jmeter-* | head -n 1) /deployments/jmeter/latest
+mv /deployments/jmeter/$(cd /deployments/jmeter; ls -dr apache-jmeter-* | head -n 1) /deployments/jmeter/latest
+#ln -sf /deployments/jmeter/$(cd /deployments/jmeter; ls -dr apache-jmeter-* | head -n 1) deployments/jmeter/latest
 ls -la /deployments/jmeter/latest
 cp /deployments/br.com.lassal.jmeter-prometheus-* /deployments/jmeter/latest/lib/ext
 ls -l /deployments/jmeter/latest/lib/ext
-cp /tmp/src/target/test-plan /deployments/jmeter
+cp -rf /tmp/src/target/test-plan /deployments/jmeter
 ls -l /deployments/jmeter
 
 
