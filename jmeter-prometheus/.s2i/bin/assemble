@@ -8,11 +8,11 @@ set -eo pipefail
 
 # Run additional build steps
 
-mkdir /opt/jmeter
+mkdir /deployments/jmeter
 tar -xzf jmeter.tgz -C /opt/jmeter
-ln -sf /opt/jmeter/(ls -dr apache-jmeter-* | head -n 1) /opt/jmeter/latest
-cp br.com.lassal.jmeter-prometheus-* /opt/jmeter/latest/lib/ext
-cp test-plan /opt/jmeter
+ln -sf /deployments/jmeter/(ls -dr apache-jmeter-* | head -n 1) /deployments/jmeter/latest
+cp br.com.lassal.jmeter-prometheus-* /deployments/jmeter/latest/lib/ext
+cp test-plan /deployments/jmeter
 
 
 
